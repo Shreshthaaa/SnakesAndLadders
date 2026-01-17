@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snake-and-ladders-cli
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snakes-and-ladders
+  template:
+    metadata:
+      labels:
+        app: snakes-and-ladders
+    spec:
+      containers:
+        - name: snakes-and-ladders
+          image: docker.io/<DOCKERHUB_USERNAME>/snakes-and-ladders:latest
+          stdin: true
+          tty: true
