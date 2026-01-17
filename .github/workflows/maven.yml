@@ -54,5 +54,4 @@ jobs:
 
     - name: Test Docker Image Runs
       run: |
-        docker run --rm -i --name snakes-and-ladders snakes-and-ladders
-        docker stop snakes-and-ladders
+        (printf "3\n1\n2\n0\n"; sleep 5) | docker run --rm -i --name snakes-and-ladders snakes-and-ladders
