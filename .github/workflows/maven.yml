@@ -46,3 +46,13 @@ jobs:
 
     - name: Run Unit Tests
       run: mvn test
+
+    - name: Build Docker Image
+      run: |
+        docker build \
+          -t snakes-and-ladders:latest .
+
+    - name: Test Docker Image Runs
+      run: |
+        docker run --rm -i --name snakes-and-ladders snakes-and-ladders
+        docker stop snakes-and-ladders
